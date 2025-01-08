@@ -1,0 +1,3 @@
+.config/systemd/user/default.target.wants/
+.config/systemd/user/sockets.target.wants/
+.config/systemd/user/timers.target.wants/
