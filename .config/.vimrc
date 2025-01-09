@@ -1,0 +1,156 @@
+" AUTHOR: Saptarshi Rajan Sarkar
+
+" Setting encoding
+set encoding=utf8
+
+" Redefining backspace behaviour
+set backspace=indent,eol,start
+
+" Syntax highlighting
+syntax enable
+
+" Line numbers
+set number
+
+" Always show some lines above or below cursor
+set scrolloff=5
+
+" Max text width marker
+highlight ColorColumn ctermbg=magenta
+set colorcolumn=81
+
+" Highlight cursor line's number and underline it
+set cursorline
+set cursorlineopt=number
+
+" Color scheme
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Spaces and Tabs
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" Indentation
+filetype plugin indent on
+set shiftwidth=2
+
+" Tab completion in vim commands
+set wildmenu
+
+" Matching parentheses
+set showmatch
+
+" Incremental search
+set incsearch
+
+" Highlight search results
+set hlsearch
+
+" Searching to be case in-sensitive
+set ignorecase
+
+" Mouse interactivity
+set mouse=a
+
+" Turn on spell check for tex,md files
+autocmd FileType latex,tex,md,markdown setlocal spell
+
+" Increasing status line to 2
+set laststatus=2
+
+" Show commands
+set showcmd
+
+" Folding with space
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+" Saving folds with view
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+"______________________________________________________________________________
+
+" vim-plug
+" ========
+call plug#begin()
+
+" vim-latex
+Plug 'vim-latex/vim-latex'
+
+" Status line plugin
+Plug 'vim-airline/vim-airline'
+
+" Solarized
+Plug 'altercation/vim-colors-solarized'
+
+" Commenting
+Plug 'tpope/vim-commentary'
+
+" Matching brackets etc.
+Plug 'tpope/vim-surround'
+
+" Code completion and linting
+Plug 'vim-syntastic/syntastic'
+
+" NERDTree file explorer
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+"______________________________________________________________________________
+" vim-latex
+" =========
+
+" Default flavour of .tex files
+let g:tex_flavor = 'latex'
+
+" Default target format
+let g:Tex_DefaultTargetFormat = 'pdf'
+
+" pdf compiler
+let g:Tex_CompileRule_pdf = 'latexmk -pdf -output-directory=build'
+
+" tex compiled doc viewer
+let g:Tex_ViewRule_pdf = 'evince'
+
+" Turning off folding
+let g:Tex_Folding = 0
+
+" Using makefile
+let g:Tex_UseMakefile = 1
+
+"______________________________________________________________________________
+
+" Enabling tab line from vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+" vim-airline column number separator
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ' l:'
+let g:airline_symbols.colnr = ' c:'
+let g:airline_symbols.maxlinenr = ''
+
+"______________________________________________________________________________
+" syntastic
+" =========
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Suppressing commands ending with space warnings.
+let g:syntastic_tex_chktex_quiet_messages = { 'regex': '\VCommand terminated with space.' }
+"______________________________________________________________________________
+
+
+" Hotkey for NERDTree
+nnoremap <C-o> :NERDTreeToggle<CR>
