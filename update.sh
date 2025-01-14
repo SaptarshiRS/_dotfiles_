@@ -3,7 +3,8 @@
 # archive=$(pwd)/dot_archives
 
 echo "Grabbing all dotfiles"
-[ -d .config/ ] && rm -r .config/ && mkdir .config/
+[ -d .config ] && rm -rf .config/
+mkdir .config
 
 # hypr
 cp -r $HOME/.config/hypr/ .config/
@@ -36,7 +37,8 @@ cp -r $HOME/.config/starship/ .config/
 cp -r $HOME/.config/fnott/ .config/
 
 # vim
-cp -r $HOME/.config/vim/ .config/
+mkdir .config/vim
+cp -r $HOME/.config/vim/vimrc .config/vim/
 
 #------------------------------------------------------------------------------
 
