@@ -9,6 +9,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+# Config home (default used by many applications)
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Command completion from history
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'

@@ -75,6 +75,7 @@ autocmd BufWinEnter *.* silent loadview
 
 " vim-plug
 " ========
+
 call plug#begin()
 
 " vim-latex

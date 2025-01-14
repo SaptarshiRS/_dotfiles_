@@ -35,10 +35,10 @@ cp -r $HOME/.config/starship/ .config/
 # fnott
 cp -r $HOME/.config/fnott/ .config/
 
-#------------------------------------------------------------------------------
-
 # vim
-cp $HOME/.vimrc .config/
+cp -r $HOME/.config/vim/ .config/
+
+#------------------------------------------------------------------------------
 
 # bash
 cp $HOME/.bashrc .config/
