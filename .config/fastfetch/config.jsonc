@@ -15,7 +15,7 @@
             "key": "host",
             "type": "title",
             "format": "{2}",
-            "keyColor": "38;2;219;126;79"
+            "keyColor": "38;2;255;123;115"
         },
         {
             "key": "ker",
