@@ -171,7 +171,8 @@ button:hover {
 #window {
     padding-left: 8px;
     padding-right: 8px;
-    background-color: #C84B37;
+    background-color: #a12937;
+    font-weight: bold;
 }
 
 /* make window module transparent when no windows present */
