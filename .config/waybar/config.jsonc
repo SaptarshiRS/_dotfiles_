@@ -14,7 +14,6 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "network",
         "cpu",
@@ -23,9 +22,7 @@
         "backlight",
         "keyboard-state",
         "battery",
-        "clock",
-        "tray",
-        "custom/power"
+        "clock"
     ],
     // Modules configuration
     "hyprland/workspaces": {
@@ -39,7 +36,7 @@
             "3": "󰂺",
             "4": "󰏘",
             "5": "",
-            "6": "",
+            "6": "󰌪",
             "7": "󰇎",
             "8": "",
             "9": "",

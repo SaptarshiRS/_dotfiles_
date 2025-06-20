@@ -115,7 +115,7 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'latexmk -pdf -output-directory=build'
 
 " tex compiled doc viewer
-let g:Tex_ViewRule_pdf = 'evince'
+let g:Tex_ViewRule_pdf = 'zathura'
 
 " Turning off folding
 let g:Tex_Folding = 0
